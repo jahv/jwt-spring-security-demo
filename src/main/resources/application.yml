@@ -1,6 +1,7 @@
 # config context path to "/" by setting an empty string
 server:
   contextPath:
+  port: 8081
 
 # JACKSON
 spring:
@@ -17,7 +18,8 @@ jwt:
       path: auth
       refresh: refresh
 
-#logging:
-#  level:
-#    org.springframework:
-#      security: DEBUG
+logging:
+  level:
+    org.springframework:
+      security: DEBUG
+

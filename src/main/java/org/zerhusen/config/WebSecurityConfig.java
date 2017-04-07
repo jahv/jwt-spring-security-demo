@@ -30,10 +30,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private UserDetailsService userDetailsService;
 
     @Autowired
+    private CustomAuthProvider customAuthProvider;
+
+    @Autowired
     public void configureAuthentication(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-        authenticationManagerBuilder
-                .userDetailsService(this.userDetailsService)
-                .passwordEncoder(passwordEncoder());
+//        authenticationManagerBuilder
+//                .userDetailsService(this.userDetailsService)
+//                .passwordEncoder(passwordEncoder());
+        authenticationManagerBuilder.authenticationProvider(customAuthProvider);
     }
 
     @Bean
